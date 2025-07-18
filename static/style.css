@@ -1,0 +1,272 @@
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Or your chosen font */
+    background-color: #f2f2f2; /* Light gray background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent body scroll if content fits */
+}
+
+.container {
+    display: flex;
+    width: 90%; /* Adjust as needed */
+    max-width: 1200px; /* Max width for larger screens */
+    height: 80vh; /* Occupy most of the viewport height */
+    background-color: #fff;
+    box-shadow: 1px 1px 30px grey;
+    border-radius: 8px;
+    overflow: hidden; /* For rounded corners */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px; /* Fixed width */
+    background-color: #f9f9f9; /* Slightly different background for sidebar */
+    padding: 20px 0;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 0 20px 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.list-nav, .custom-lists ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.nav-item i {
+    margin-right: 10px;
+    color: #555;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: #e6f2ff; /* Light blue for hover/active */
+    color: #0078d7; /* Microsoft To Do blue */
+}
+
+.nav-item.active i {
+    color: #0078d7;
+}
+
+.custom-lists {
+    margin-top: 20px;
+    padding: 0 20px;
+    flex-grow: 1; /* Allows it to take available space */
+    overflow-y: auto; /* Enable scroll for many custom lists */
+}
+
+.add-list {
+    display: flex;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.add-list input {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.add-list button {
+    background-color: #0078d7;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex-grow: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling for tasks */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-header h1 {
+    margin: 0;
+    color: #0078d7;
+}
+
+.filter-options button {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #555;
+}
+
+.filter-options button.active {
+    background-color: #0078d7;
+    color: #fff;
+    border-color: #0078d7;
+}
+
+/* Task List Styling */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Takes available space */
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.task-checkbox.completed {
+    background-color: #0078d7;
+    border-color: #0078d7;
+}
+
+.task-checkbox.completed i {
+    color: #fff;
+    font-size: 12px;
+}
+
+.task-name {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer; /* To indicate it's editable */
+}
+
+.task-name.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.task-actions .importance-star {
+    font-size: 18px;
+    color: #ccc; /* Default color */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.task-actions .importance-star.important {
+    color: #ffc107; /* Yellow for important */
+}
+
+.task-actions .edit-btn,
+.task-actions .delete-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+    padding: 5px;
+    transition: color 0.2s ease;
+}
+
+.task-actions .edit-btn:hover,
+.task-actions .delete-btn:hover {
+    color: #0078d7; /* Or red for delete */
+}
+
+/* Add Task Input */
+.add-task {
+    display: flex;
+    margin-top: auto; /* Pushes it to the bottom */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.add-task input {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.add-task button {
+    background-color: #0078d7;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Responsive adjustments (basic) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 95vh;
+        width: 95%;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0;
+    }
+    .main-content {
+        padding-top: 10px;
+    }
+    .add-list, .add-task {
+        padding: 10px;
+    }
+}
